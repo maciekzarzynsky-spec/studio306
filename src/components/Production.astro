@@ -1,0 +1,356 @@
+<section class="production" id="produkcja">
+  <div class="production__inner">
+    <header class="production__header reveal">
+      <p class="production__eyebrow">06 / PRODUKCJA</p>
+
+      <div class="production__intro">
+        <h2>
+          Wszystko, czego potrzeba,<br />
+          mamy na miejscu.
+        </h2>
+
+        <p class="production__lead">
+          Od druku wielkoformatowego i cyfrowego po cięcie, laminowanie
+          i obróbkę. Własne zaplecze pozwala nam kontrolować realizację
+          od projektu do gotowego produktu.
+        </p>
+      </div>
+    </header>
+
+    <div class="production__grid">
+
+      <article class="production-card production-card--wide reveal">
+        <div class="production-card__visual">
+          <span>Zdjęcie produkcji</span>
+        </div>
+
+        <div class="production-card__info">
+          <span class="production-card__number">01</span>
+
+          <div>
+            <h3>Druk wielkoformatowy</h3>
+            <p>
+              Roland VS-640i · Roland RF-640 · Artemis 3,2 m
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="production-card reveal">
+        <div class="production-card__visual">
+          <span>Detal maszyny</span>
+        </div>
+
+        <div class="production-card__info">
+          <span class="production-card__number">02</span>
+
+          <div>
+            <h3>Cięcie i obróbka</h3>
+            <p>
+              Summa D160 · laser CO₂ · gilotyny
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="production-card reveal">
+        <div class="production-card__visual">
+          <span>Detal produkcji</span>
+        </div>
+
+        <div class="production-card__info">
+          <span class="production-card__number">03</span>
+
+          <div>
+            <h3>Wykończenie</h3>
+            <p>
+              Laminowanie · przygotowanie materiałów · montaż
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="production-card production-card--wide reveal">
+        <div class="production-card__visual">
+          <span>Zdjęcie druku cyfrowego</span>
+        </div>
+
+        <div class="production-card__info">
+          <span class="production-card__number">04</span>
+
+          <div>
+            <h3>Druk cyfrowy</h3>
+            <p>
+              Materiały firmowe · katalogi · wizytówki · opakowania
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<style>
+ .production {
+  padding: 180px 0 140px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f5f2 0px,
+      #d9d9d7 55px,
+      #697077 130px,
+      #26313a 210px,
+      #101820 320px
+    );
+
+  color: #f7f5f2;
+}
+
+  .production__inner {
+    width: min(1400px, calc(100% - 80px));
+    margin: 0 auto;
+  }
+
+  /* =========================
+     HEADER
+     ========================= */
+
+  .production__header {
+    margin-bottom: 72px;
+  }
+
+  .production__eyebrow {
+    margin: 0 0 24px;
+
+    color: rgba(247, 245, 242, 0.58);
+
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .production__intro {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1.65fr)
+      minmax(280px, 0.7fr);
+
+    gap: 80px;
+    align-items: end;
+  }
+
+  .production h2 {
+    max-width: 1000px;
+    margin: 0;
+
+    color: #f7f5f2;
+
+    font-size: clamp(50px, 6vw, 88px);
+    line-height: 0.97;
+    letter-spacing: -0.05em;
+    font-weight: 700;
+  }
+
+  .production__lead {
+    max-width: 430px;
+    margin: 0 0 6px;
+
+    color: rgba(247, 245, 242, 0.68);
+
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  /* =========================
+     GRID
+     ========================= */
+
+  .production__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  /* =========================
+     CARD
+     ========================= */
+
+  .production-card {
+    min-height: 520px;
+
+    padding: 18px;
+
+    border: 1px solid rgba(247, 245, 242, 0.12);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+  }
+
+  .production-card--wide {
+    grid-column: span 2;
+  }
+
+  /* =========================
+     VISUAL
+     ========================= */
+
+  .production-card__visual {
+    position: relative;
+
+    min-height: 390px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.015)
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 79px,
+        rgba(255, 255, 255, 0.035) 80px
+      );
+  }
+
+  .production-card--wide .production-card__visual {
+    min-height: 500px;
+  }
+
+  .production-card__visual span {
+    position: absolute;
+
+    left: 22px;
+    bottom: 20px;
+
+    color: rgba(247, 245, 242, 0.36);
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* =========================
+     INFO
+     ========================= */
+
+  .production-card__info {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+
+    gap: 16px;
+
+    padding: 24px 6px 6px;
+  }
+
+  .production-card__number {
+    padding-top: 7px;
+
+    color: rgba(247, 245, 242, 0.42);
+
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  .production-card h3 {
+    margin: 0;
+
+    color: #f7f5f2;
+
+    font-size: clamp(28px, 2.8vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.035em;
+
+    font-weight: 500;
+  }
+
+  .production-card p {
+    margin: 12px 0 0;
+
+    color: rgba(247, 245, 242, 0.55);
+
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* =========================
+     TABLET / MOBILE
+     ========================= */
+
+  @media (max-width: 900px) {
+    .production {
+      padding: 90px 0;
+    }
+
+    .production__inner {
+      width: min(100% - 36px, 1400px);
+    }
+
+    .production__header {
+      margin-bottom: 46px;
+    }
+
+    .production__intro {
+      grid-template-columns: 1fr;
+
+      gap: 30px;
+    }
+
+    .production__lead {
+      max-width: 620px;
+    }
+
+    .production__grid {
+      grid-template-columns: 1fr;
+
+      gap: 14px;
+    }
+
+    .production-card,
+    .production-card--wide {
+      grid-column: auto;
+
+      min-height: auto;
+    }
+
+    .production-card__visual,
+    .production-card--wide .production-card__visual {
+      min-height: 360px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .production h2 {
+      font-size: clamp(42px, 12vw, 58px);
+    }
+
+    .production-card {
+      padding: 12px;
+    }
+
+    .production-card__visual,
+    .production-card--wide .production-card__visual {
+      min-height: 300px;
+    }
+
+    .production-card__info {
+      grid-template-columns: 1fr;
+
+      gap: 12px;
+
+      padding: 20px 4px 6px;
+    }
+
+    .production-card__number {
+      padding-top: 0;
+    }
+  }
+</style>

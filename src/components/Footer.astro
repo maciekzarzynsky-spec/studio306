@@ -1,0 +1,287 @@
+<footer class="footer">
+  <div class="footer__inner">
+
+    <div class="footer__top">
+      <a href="#" class="footer__brand">
+        STUDIO 306
+      </a>
+
+      <div class="footer__nav">
+        <div class="footer__column">
+          <span class="footer__label">NAWIGACJA</span>
+
+          <a href="#oferta">Oferta</a>
+          <a href="#realizacje">Realizacje</a>
+          <a href="#produkcja">Produkcja</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <div class="footer__column">
+          <span class="footer__label">KONTAKT</span>
+
+          <a href="mailto:kontakt@studio306.pl">
+            kontakt@studio306.pl
+          </a>
+
+          <a href="tel:+48123456789">
+            +48 123 456 789
+          </a>
+
+          <span>Warszawa</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__wordmark" aria-hidden="true">
+      STUDIO 306
+    </div>
+
+    <div class="footer__bottom">
+      <span>© {new Date().getFullYear()} Studio 306</span>
+
+      <div class="footer__legal">
+        <a href="#">Polityka prywatności</a>
+
+        <a href="#top" class="footer__back">
+          Do góry
+          <span>↑</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .footer {
+    overflow: hidden;
+
+    padding: 90px 0 28px;
+
+    background: #101820;
+    color: #f7f5f2;
+  }
+
+  .footer__inner {
+    width: min(1400px, calc(100% - 80px));
+    margin: 0 auto;
+  }
+
+  /* =========================
+     TOP
+     ========================= */
+
+  .footer__top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    padding-bottom: 100px;
+  }
+
+  .footer__brand {
+    width: fit-content;
+
+    color: #f7f5f2;
+
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+
+    text-decoration: none;
+  }
+
+  .footer__nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 50px;
+  }
+
+  .footer__column {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .footer__label {
+    margin-bottom: 12px;
+
+    color: rgba(247, 245, 242, 0.38);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+  }
+
+  .footer__column a,
+  .footer__column > span:not(.footer__label) {
+    color: rgba(247, 245, 242, 0.76);
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    text-decoration: none;
+  }
+
+  .footer__column a {
+    transition: color 0.2s ease;
+  }
+
+  .footer__column a:hover {
+    color: #f7f5f2;
+  }
+
+  /* =========================
+     BIG WORDMARK
+     ========================= */
+
+  .footer__wordmark {
+    margin-left: -0.055em;
+
+    color: #f7f5f2;
+
+   font-size: clamp(64px, 7vw, 110px);
+    font-weight: 800;
+
+    line-height: 0.72;
+    letter-spacing: -0.075em;
+
+    white-space: nowrap;
+
+    user-select: none;
+  }
+
+  /* =========================
+     BOTTOM
+     ========================= */
+
+  .footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-top: 65px;
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(247, 245, 242, 0.14);
+
+    color: rgba(247, 245, 242, 0.45);
+
+    font-size: 12px;
+  }
+
+  .footer__legal {
+    display: flex;
+    align-items: center;
+
+    gap: 34px;
+  }
+
+  .footer__bottom a {
+    color: rgba(247, 245, 242, 0.45);
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+  }
+
+  .footer__bottom a:hover {
+    color: #f7f5f2;
+  }
+
+  .footer__back {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+  }
+
+  .footer__back span {
+    font-size: 16px;
+
+    transition: transform 0.25s ease;
+  }
+
+  .footer__back:hover span {
+    transform: translateY(-4px);
+  }
+
+  /* =========================
+     TABLET
+     ========================= */
+
+  @media (max-width: 900px) {
+    .footer {
+      padding-top: 70px;
+    }
+
+    .footer__inner {
+      width: min(100% - 36px, 1400px);
+    }
+
+    .footer__top {
+      grid-template-columns: 1fr;
+
+      gap: 60px;
+
+      padding-bottom: 80px;
+    }
+
+    .footer__wordmark {
+      font-size: 13vw;
+    }
+  }
+
+  /* =========================
+     MOBILE
+     ========================= */
+
+  @media (max-width: 600px) {
+    .footer {
+      padding: 60px 0 24px;
+    }
+
+    .footer__top {
+      gap: 50px;
+
+      padding-bottom: 70px;
+    }
+
+    .footer__nav {
+      grid-template-columns: 1fr;
+
+      gap: 42px;
+    }
+
+    .footer__wordmark {
+      font-size: 13.5vw;
+
+      line-height: 0.78;
+    }
+
+    .footer__bottom {
+      align-items: flex-start;
+      flex-direction: column;
+
+      gap: 18px;
+
+      margin-top: 45px;
+    }
+
+    .footer__legal {
+      width: 100%;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+  }
+</style>

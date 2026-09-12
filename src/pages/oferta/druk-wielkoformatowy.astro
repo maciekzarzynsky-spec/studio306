@@ -1,0 +1,506 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+const services = [
+  "Folia monomeryczna",
+  "Folia One Way Vision",
+  "Plakaty",
+  "Roll-upy",
+  "Banery",
+  "Tapety i fototapety",
+  "Obrazy canvas",
+  "Systemy wystawiennicze",
+  "Litery przestrzenne",
+  "Szkło dekoracyjne",
+  "Oklejanie okien i witryn",
+  "Kasetony i litery świetlne",
+  "Grawerowanie",
+];
+
+const materials = [
+  "Folie samoprzylepne — błysk, mat, bezbarwne",
+  "Banery frontlit 510 g",
+  "Banery odblaskowe i backlit",
+  "Folie One Way Vision",
+  "Siatki mesh",
+  "Naklejki i naklejki podłogowe",
+  "Szkło dekoracyjne",
+  "Płyty PVC",
+  "Materiały flagowe",
+  "Materiały do systemów wystawienniczych",
+];
+---
+
+<Layout>
+  <Navbar />
+
+  <main>
+    <section class="offer-hero reveal">
+      <div class="eyebrow">Oferta / Druk wielkoformatowy</div>
+
+      <div class="hero-grid">
+        <h1>
+          Duży format.<br />
+          Duże możliwości.
+        </h1>
+
+        <div class="hero-copy">
+          <p>
+            Od pojedynczych materiałów reklamowych po kompleksowe realizacje.
+            Drukujemy, produkujemy i pomagamy doprowadzić projekt do gotowego efektu.
+          </p>
+
+          <a class="text-link" href="/kontakt">
+            Napisz do nas <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="visual-placeholder reveal"
+      aria-label="Miejsce na zdjęcie realizacji"
+    >
+      <span>Zdjęcie realizacji</span>
+    </section>
+
+    <section class="services reveal">
+      <div class="section-heading">
+        <div class="eyebrow">Możliwości</div>
+
+        <h2>
+          Wszystko, czego potrzebujesz<br />
+          w dużym formacie.
+        </h2>
+      </div>
+
+      <div class="services-grid">
+        {
+          services.map((service, index) => (
+            <div class="service-row">
+              <span class="service-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <span class="service-name">{service}</span>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="technology reveal">
+      <div class="technology-title">
+        <div class="eyebrow">Technologia</div>
+
+        <h2>
+          Druk dopasowany<br />
+          do realizacji.
+        </h2>
+      </div>
+
+      <div class="technology-content">
+        <p class="technology-intro">
+          Park maszynowy Studio 306 pozwala realizować zarówno standardowe wydruki,
+          jak i większe, niestandardowe formaty.
+        </p>
+
+        <div class="specs">
+          <div class="spec">
+            <span class="spec-value">2,5 m</span>
+            <span class="spec-label">maksymalna szerokość druku</span>
+          </div>
+
+          <div class="spec">
+            <span class="spec-value">1440 dpi</span>
+            <span class="spec-label">maksymalna rozdzielczość</span>
+          </div>
+
+          <div class="spec">
+            <span class="spec-value">UV</span>
+            <span class="spec-label">oraz technologie solventowe</span>
+          </div>
+        </div>
+
+        <div class="materials">
+          <h3>Materiały, na których drukujemy</h3>
+
+          <div class="materials-grid">
+            {
+              materials.map((material) => (
+                <div class="material">{material}</div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta reveal">
+      <div>
+        <div class="eyebrow">Masz projekt?</div>
+        <h2>Zrealizujmy go.</h2>
+      </div>
+
+      <a href="/kontakt" class="cta-link">
+        Napisz do nas <span>↗</span>
+      </a>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  :global(body) {
+    margin: 0;
+    background: #f7f6f3;
+    color: #111;
+  }
+
+  main {
+    overflow: hidden;
+  }
+
+  .offer-hero,
+  .services,
+  .technology,
+  .cta {
+    padding-left: clamp(24px, 5.5vw, 88px);
+    padding-right: clamp(24px, 5.5vw, 88px);
+  }
+
+  .offer-hero {
+    padding-top: clamp(90px, 12vw, 180px);
+    padding-bottom: clamp(80px, 10vw, 150px);
+  }
+
+  .eyebrow {
+    margin-bottom: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+    gap: clamp(40px, 8vw, 130px);
+    align-items: end;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1,
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    letter-spacing: -0.055em;
+  }
+
+  h1 {
+    margin-bottom: 0;
+    font-size: clamp(64px, 8.7vw, 138px);
+    line-height: 0.88;
+  }
+
+  .hero-copy {
+    max-width: 470px;
+    padding-bottom: 6px;
+  }
+
+  .hero-copy p,
+  .technology-intro {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(19px, 1.6vw, 25px);
+    line-height: 1.45;
+    color: #595959;
+  }
+
+  .text-link,
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .text-link {
+    margin-top: 24px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #111;
+  }
+
+  .text-link span,
+  .cta-link span {
+    transition: transform 180ms ease;
+  }
+
+  .text-link:hover span {
+    transform: translateX(5px);
+  }
+
+  .visual-placeholder {
+    display: grid;
+    min-height: clamp(360px, 55vw, 780px);
+    margin: 0 clamp(24px, 5.5vw, 88px);
+    place-items: center;
+    background: #e9e7e1;
+    color: #777;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .services {
+    padding-top: clamp(100px, 12vw, 180px);
+    padding-bottom: clamp(110px, 13vw, 200px);
+  }
+
+  .section-heading {
+    margin-bottom: clamp(60px, 8vw, 110px);
+  }
+
+  h2 {
+    margin-bottom: 0;
+    font-size: clamp(52px, 6.6vw, 102px);
+    line-height: 0.95;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid #cfcfcf;
+  }
+
+  .service-row {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 18px;
+    align-items: center;
+    min-height: 86px;
+    border-bottom: 1px solid #cfcfcf;
+  }
+
+  .service-row:nth-child(odd) {
+    padding-right: clamp(24px, 4vw, 70px);
+    border-right: 1px solid #cfcfcf;
+  }
+
+  .service-row:nth-child(even) {
+    padding-left: clamp(24px, 4vw, 70px);
+  }
+
+  .service-number {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #777;
+  }
+
+  .service-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(20px, 2vw, 30px);
+    line-height: 1.1;
+  }
+
+  .technology {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(60px, 9vw, 150px);
+    padding-top: clamp(100px, 12vw, 180px);
+    padding-bottom: clamp(110px, 13vw, 200px);
+    border-top: 1px solid #cfcfcf;
+  }
+
+  .technology-title h2 {
+    font-size: clamp(48px, 5vw, 78px);
+  }
+
+  .technology-intro {
+    max-width: 690px;
+    margin-bottom: 70px;
+  }
+
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 90px;
+    border-top: 1px solid #bdbdbd;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  .spec {
+    display: flex;
+    min-height: 180px;
+    padding: 26px 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #bdbdbd;
+  }
+
+  .spec:first-child {
+    padding-left: 0;
+  }
+
+  .spec:last-child {
+    border-right: 0;
+  }
+
+  .spec-value {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 4vw, 62px);
+    letter-spacing: -0.045em;
+  }
+
+  .spec-label {
+    max-width: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #666;
+  }
+
+  .materials h3 {
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .materials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+  }
+
+  .material {
+    padding: 15px 0;
+    border-top: 1px solid #d3d3d3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .cta {
+    display: flex;
+    min-height: 420px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 50px;
+    background: #111;
+    color: #f7f6f3;
+  }
+
+  .cta .eyebrow {
+    color: #b8b8b8;
+  }
+
+  .cta h2 {
+    font-size: clamp(64px, 8vw, 124px);
+  }
+
+  .cta-link {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    border-bottom: 1px solid #f7f6f3;
+  }
+
+  .cta-link:hover span {
+    transform: translate(4px, -4px);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 700ms ease,
+      transform 700ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 850px) {
+    .hero-grid,
+    .technology {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+    }
+
+    .services-grid,
+    .materials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-row:nth-child(odd),
+    .service-row:nth-child(even) {
+      padding-left: 0;
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    .specs {
+      grid-template-columns: 1fr;
+    }
+
+    .spec,
+    .spec:first-child {
+      min-height: 130px;
+      padding: 24px 0;
+      border-right: 0;
+      border-bottom: 1px solid #bdbdbd;
+    }
+
+    .spec:last-child {
+      border-bottom: 0;
+    }
+
+    .cta {
+      min-height: 340px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+  }
+</style>
+
+<script>
+  const elements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  elements.forEach((element) => observer.observe(element));
+</script>

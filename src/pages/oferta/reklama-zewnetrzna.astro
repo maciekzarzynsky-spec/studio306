@@ -1,0 +1,559 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+const services = [
+  {
+    number: "01",
+    title: "Konstrukcje reklamowe",
+    text: "Projektowanie i wykonanie konstrukcji dopasowanych do miejsca, formatu i sposobu ekspozycji.",
+  },
+  {
+    number: "02",
+    title: "Powierzchnie wielkoformatowe",
+    text: "Realizacje reklamowe na dużych powierzchniach — od przygotowania materiału po finalny montaż.",
+  },
+  {
+    number: "03",
+    title: "Montaże alpinistyczne",
+    text: "Montaż reklam w miejscach wymagających pracy na wysokości i niestandardowego dostępu.",
+  },
+];
+---
+
+<Layout>
+  <Navbar />
+
+  <main>
+    <section class="hero reveal">
+      <div class="hero-top">
+        <span class="eyebrow">Oferta / Reklama zewnętrzna</span>
+
+        <a class="hero-cta" href="/kontakt">
+          Wyceń projekt <span>→</span>
+        </a>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>
+            Reklama,<br />
+            którą widać.
+          </h1>
+        </div>
+
+        <div class="hero-side">
+          <p>
+            Reklamę zewnętrzną realizujemy od 2002 roku. Od konstrukcji i dużych
+            powierzchni po montaże na wysokości — od projektu po gotową realizację.
+          </p>
+
+          <div class="quick-services">
+            {
+              services.map((service) => (
+                <div class="quick-service">
+                  <span>{service.number}</span>
+                  <strong>{service.title}</strong>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="image-block reveal"
+      aria-label="Miejsce na zdjęcie realizacji reklamy zewnętrznej"
+    >
+      <span>Zdjęcie realizacji</span>
+    </section>
+
+    <section class="services reveal">
+      <div class="services-heading">
+        <span class="eyebrow">Zakres usług</span>
+
+        <h2>
+          Od konstrukcji<br />
+          po montaż.
+        </h2>
+      </div>
+
+      <div class="service-list">
+        {
+          services.map((service) => (
+            <article class="service-card">
+              <span class="service-number">{service.number}</span>
+
+              <div>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="formats reveal">
+      <div class="formats-label">
+        <span class="eyebrow">Realizujemy również</span>
+      </div>
+
+      <div class="formats-grid">
+        <span>Kasetony</span>
+        <span>Litery świetlne</span>
+        <span>Neony</span>
+        <span>Pylony</span>
+        <span>Stoiska wystawiennicze</span>
+        <span>Billboardy</span>
+        <span>Megaboardy</span>
+        <span>Konstrukcje niestandardowe</span>
+      </div>
+    </section>
+
+    <section class="facts reveal">
+      <div class="fact fact-main">
+        <span class="fact-value">2002</span>
+
+        <div>
+          <span class="eyebrow">Od tego roku</span>
+          <p>Realizujemy reklamę zewnętrzną.</p>
+        </div>
+      </div>
+
+      <div class="fact">
+        <span class="fact-value">4</span>
+
+        <div>
+          <span class="eyebrow">Podnośniki koszowe</span>
+          <p>Własne zaplecze do realizacji i montażu.</p>
+        </div>
+      </div>
+
+      <div class="fact">
+        <span class="fact-value">A–Z</span>
+
+        <div>
+          <span class="eyebrow">Cały proces</span>
+          <p>Projekt, przygotowanie, produkcja i montaż.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta reveal">
+      <div>
+        <span class="eyebrow">Masz miejsce na reklamę?</span>
+        <h2>Zróbmy z niego użytek.</h2>
+      </div>
+
+      <a href="/kontakt">
+        Napisz do nas <span>↗</span>
+      </a>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  :global(body) {
+    margin: 0;
+    background: #f7f6f3;
+    color: #111;
+  }
+
+  main {
+    overflow: hidden;
+  }
+
+  .hero,
+  .services,
+  .formats,
+  .facts,
+  .cta {
+    padding-left: clamp(24px, 5.5vw, 88px);
+    padding-right: clamp(24px, 5.5vw, 88px);
+  }
+
+  .eyebrow {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero {
+    padding-top: clamp(70px, 8vw, 120px);
+    padding-bottom: clamp(60px, 7vw, 100px);
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: clamp(45px, 6vw, 80px);
+  }
+
+  .hero-cta,
+  .cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 5px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: clamp(48px, 8vw, 130px);
+    align-items: end;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: -0.05em;
+  }
+
+  h1 {
+    margin-bottom: 0;
+    font-size: clamp(58px, 7.2vw, 108px);
+    line-height: 0.92;
+  }
+
+  .hero-side > p {
+    max-width: 540px;
+    margin-bottom: 32px;
+    color: #555;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(18px, 1.45vw, 22px);
+    line-height: 1.5;
+  }
+
+  .quick-services {
+    border-top: 1px solid #cfcfcf;
+  }
+
+  .quick-service {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    gap: 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid #cfcfcf;
+  }
+
+  .quick-service span {
+    color: #777;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+  }
+
+  .quick-service strong {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  .image-block {
+    display: grid;
+    min-height: clamp(340px, 43vw, 620px);
+    margin: 0 clamp(24px, 5.5vw, 88px);
+    place-items: center;
+    background: #e8e6df;
+    color: #777;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(60px, 9vw, 150px);
+    padding-top: clamp(100px, 11vw, 160px);
+    padding-bottom: clamp(100px, 11vw, 160px);
+  }
+
+  .services-heading .eyebrow,
+  .formats .eyebrow,
+  .facts .eyebrow,
+  .cta .eyebrow {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+    font-size: clamp(48px, 5.5vw, 82px);
+    line-height: 0.96;
+  }
+
+  .service-list {
+    border-top: 1px solid #c9c9c9;
+  }
+
+  .service-card {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    padding: 32px 0 38px;
+    border-bottom: 1px solid #c9c9c9;
+  }
+
+  .service-number {
+    color: #777;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+  }
+
+  .service-card h3 {
+    margin-bottom: 12px;
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 1;
+  }
+
+  .service-card p {
+    max-width: 600px;
+    margin-bottom: 0;
+    color: #666;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .formats {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
+    gap: clamp(50px, 8vw, 130px);
+    padding-top: clamp(70px, 8vw, 110px);
+    padding-bottom: clamp(70px, 8vw, 110px);
+    border-top: 1px solid #c9c9c9;
+  }
+
+  .formats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid #c9c9c9;
+  }
+
+  .formats-grid span {
+    padding: 18px 0;
+    border-bottom: 1px solid #c9c9c9;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(20px, 2vw, 30px);
+    letter-spacing: -0.03em;
+  }
+
+  .formats-grid span:nth-child(odd) {
+    padding-right: 30px;
+  }
+
+  .formats-grid span:nth-child(even) {
+    padding-left: 30px;
+    border-left: 1px solid #c9c9c9;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr 0.75fr;
+    background: #eceae5;
+  }
+
+  .fact {
+    min-height: 360px;
+    padding: clamp(36px, 4vw, 64px) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid #c4c2bd;
+  }
+
+  .fact:first-child {
+    border-left: 0;
+  }
+
+  .fact:not(:first-child) {
+    padding-left: clamp(28px, 3vw, 50px);
+  }
+
+  .fact:not(:last-child) {
+    padding-right: clamp(28px, 3vw, 50px);
+  }
+
+  .fact-value {
+    display: block;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(70px, 8vw, 124px);
+    line-height: 0.85;
+    letter-spacing: -0.07em;
+  }
+
+  .fact .eyebrow {
+    margin-bottom: 10px;
+  }
+
+  .fact p {
+    max-width: 300px;
+    margin: 0;
+    color: #5e5e5e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .cta {
+    display: flex;
+    min-height: 340px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 50px;
+    background: #111;
+    color: #f7f6f3;
+  }
+
+  .cta .eyebrow {
+    color: #aaa;
+  }
+
+  .cta h2 {
+    max-width: 900px;
+  }
+
+  .cta a {
+    flex: 0 0 auto;
+    margin-bottom: 8px;
+  }
+
+  .hero-cta span,
+  .cta a span {
+    transition: transform 180ms ease;
+  }
+
+  .hero-cta:hover span {
+    transform: translateX(5px);
+  }
+
+  .cta a:hover span {
+    transform: translate(4px, -4px);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 650ms ease,
+      transform 650ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 850px) {
+    .hero-grid,
+    .services,
+    .formats,
+    .facts {
+      grid-template-columns: 1fr;
+    }
+
+    .formats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .formats-grid span:nth-child(even) {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .fact {
+      min-height: 260px;
+      padding: 40px 0;
+      border-left: 0;
+      border-top: 1px solid #c4c2bd;
+    }
+
+    .fact:first-child {
+      border-top: 0;
+    }
+
+    .fact:not(:first-child),
+    .fact:not(:last-child) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .hero-top {
+      align-items: flex-start;
+    }
+
+    .cta {
+      min-height: 300px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .hero {
+      padding-top: 60px;
+    }
+
+    .hero-top {
+      margin-bottom: 38px;
+    }
+
+    .hero-cta {
+      display: none;
+    }
+
+    h1 {
+      font-size: clamp(52px, 15vw, 72px);
+    }
+
+    .service-card {
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+    }
+  }
+</style>
+
+<script>
+  const revealElements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  revealElements.forEach((element) => observer.observe(element));
+</script>

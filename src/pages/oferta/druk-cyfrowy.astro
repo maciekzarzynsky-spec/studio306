@@ -1,0 +1,839 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+const products = [
+  { number: "01", title: "Plakaty" },
+  { number: "02", title: "Ulotki" },
+  { number: "03", title: "Foldery" },
+  { number: "04", title: "Teczki" },
+  { number: "05", title: "Katalogi" },
+  { number: "06", title: "Naklejki" },
+  { number: "07", title: "Wobblery" },
+  { number: "08", title: "Wizytówki" },
+  { number: "09", title: "Notesy" },
+  { number: "10", title: "Opakowania" },
+  { number: "11", title: "Koperty" },
+  { number: "12", title: "Hot stamping" },
+  { number: "13", title: "Tłoczenie" },
+];
+---
+
+<Layout>
+  <Navbar />
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-meta reveal">
+          <span>03 / OFERTA</span>
+          <span>DRUK CYFROWY</span>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-title reveal">
+            <h1>
+              Druk.<br />
+              Bez zbędnego<br />
+              komplikowania.
+            </h1>
+          </div>
+
+          <div class="hero-copy reveal">
+            <p>
+              Materiały drukowane dla firm, marek i wydarzeń.
+              Od wizytówki i ulotki po katalog, opakowanie
+              i wykończenia specjalne.
+            </p>
+
+            <a href="/kontakt" class="text-link">
+              Zapytaj o wycenę
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog">
+      <div class="container">
+        <div class="catalog-head reveal">
+          <div>
+            <span class="label">Oferta</span>
+            <h2>Co drukujemy.</h2>
+          </div>
+
+          <div class="product-count">
+            <span>13</span>
+            <p>typów realizacji</p>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          {
+            products.map((product) => (
+              <article class="product reveal">
+                <span class="product-number">{product.number}</span>
+                <h3>{product.title}</h3>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="visual reveal">
+      <div class="container">
+        <div class="visual-placeholder">
+          <span>Zdjęcie / detal druku</span>
+
+          <div class="visual-caption">
+            <span>Studio 306</span>
+            <span>Druk cyfrowy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="finish">
+      <div class="container finish-grid">
+        <div class="finish-heading reveal">
+          <span class="label">Wykończenie</span>
+
+          <h2>
+            Detal też<br />
+            ma znaczenie.
+          </h2>
+        </div>
+
+        <div class="finish-options reveal">
+          <article>
+            <span>01</span>
+
+            <div>
+              <h3>Hot stamping</h3>
+
+              <p>
+                Uszlachetnienie materiałów drukowanych pozwalające
+                wyróżnić wybrane elementy projektu.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>02</span>
+
+            <div>
+              <h3>Tłoczenie</h3>
+
+              <p>
+                Przestrzenny detal stosowany jako dodatkowy element
+                wykończenia materiałów drukowanych.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="simple-process">
+      <div class="container">
+        <div class="process-head reveal">
+          <span class="label">Jak działamy</span>
+
+          <h2>Od pliku do gotowego druku.</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <span>01</span>
+            <strong>Projekt lub plik</strong>
+          </div>
+
+          <div class="step reveal">
+            <span>02</span>
+            <strong>Przygotowanie</strong>
+          </div>
+
+          <div class="step reveal">
+            <span>03</span>
+            <strong>Produkcja</strong>
+          </div>
+
+          <div class="step reveal">
+            <span>04</span>
+            <strong>Gotowa realizacja</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner reveal">
+        <div>
+          <span class="label">Masz coś do wydrukowania?</span>
+
+          <h2>
+            Opowiedz nam<br />
+            o projekcie.
+          </h2>
+        </div>
+
+        <a href="/kontakt">
+          Skontaktuj się
+          <span>↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  :global(body) {
+    margin: 0;
+    background: #f7f6f3;
+    color: #111;
+  }
+
+  main {
+    overflow: hidden;
+  }
+
+  .container {
+    width: min(1180px, calc(100% - 96px));
+    margin: 0 auto;
+  }
+
+  .label {
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+  }
+
+  /* HERO */
+
+  .hero {
+    padding: 72px 0 82px;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid #c7c5bf;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 80px;
+
+    align-items: end;
+
+    padding-top: 58px;
+  }
+
+  h1 {
+    margin-bottom: 0;
+
+    font-size: clamp(48px, 4.8vw, 74px);
+    line-height: 0.97;
+
+    letter-spacing: -0.05em;
+  }
+
+  .hero-copy {
+    padding-bottom: 4px;
+  }
+
+  .hero-copy p {
+    max-width: 400px;
+
+    margin-bottom: 30px;
+
+    color: #555;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+  .text-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 6px;
+
+    border-bottom: 1px solid #111;
+
+    color: #111;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+  }
+
+  .text-link span {
+    transition: transform 180ms ease;
+  }
+
+  .text-link:hover span {
+    transform: translate(4px, -4px);
+  }
+
+  /* CATALOG */
+
+  .catalog {
+    padding: 85px 0 95px;
+
+    background: #fff;
+  }
+
+  .catalog-head {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 50px;
+
+    margin-bottom: 42px;
+  }
+
+  .catalog-head .label {
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    margin-bottom: 0;
+
+    font-size: clamp(38px, 4vw, 58px);
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+  }
+
+  .product-count {
+    text-align: right;
+  }
+
+  .product-count > span {
+    display: block;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+  }
+
+  .product-count p {
+    margin: 7px 0 0;
+
+    color: #777;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+  }
+
+  /*
+    ŚWIADOMIE NIEKLIKALNA,
+    KOMPAKTOWA LISTA USŁUG
+  */
+
+  .product-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    border-top: 1px solid #c7c5bf;
+  }
+
+  .product {
+    min-height: 88px;
+
+    padding: 15px 18px 17px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #c7c5bf;
+  }
+
+  .product:not(:nth-child(4n + 1)) {
+    padding-left: 18px;
+
+    border-left: 1px solid #c7c5bf;
+  }
+
+  .product-number {
+    color: #8a8a8a;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+  }
+
+  .product h3 {
+    margin: 20px 0 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: clamp(15px, 1.15vw, 18px);
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.02em;
+  }
+
+  /* VISUAL */
+
+  .visual {
+    padding: 95px 0;
+  }
+
+  .visual-placeholder {
+    position: relative;
+
+    min-height: 430px;
+
+    display: grid;
+    place-items: center;
+
+    background: #e4e2dc;
+  }
+
+  .visual-placeholder > span {
+    color: #777;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+  }
+
+  .visual-caption {
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+    bottom: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+  }
+
+  /* FINISH */
+
+  .finish {
+    padding: 90px 0 100px;
+
+    background: #ebe9e3;
+  }
+
+  .finish-grid {
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 90px;
+  }
+
+  .finish-heading .label {
+    margin-bottom: 18px;
+  }
+
+  .finish-options {
+    border-top: 1px solid #bbb;
+  }
+
+  .finish-options article {
+    display: grid;
+
+    grid-template-columns: 40px 1fr;
+
+    gap: 22px;
+
+    padding: 25px 0 28px;
+
+    border-bottom: 1px solid #bbb;
+  }
+
+  .finish-options article > span {
+    padding-top: 4px;
+
+    color: #777;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+  }
+
+  .finish-options h3 {
+    margin-bottom: 9px;
+
+    font-size: 27px;
+
+    letter-spacing: -0.04em;
+  }
+
+  .finish-options p {
+    max-width: 500px;
+
+    margin-bottom: 0;
+
+    color: #606060;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  /* PROCESS */
+
+  .simple-process {
+    padding: 90px 0;
+  }
+
+  .process-head {
+    margin-bottom: 50px;
+  }
+
+  .process-head .label {
+    margin-bottom: 16px;
+  }
+
+  .steps {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid #bbb;
+  }
+
+  .step {
+    min-height: 120px;
+
+    padding: 16px 16px 18px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-right: 1px solid #bbb;
+  }
+
+  .step + .step {
+    padding-left: 16px;
+  }
+
+  .step:last-child {
+    border-right: 0;
+  }
+
+  .step span {
+    color: #777;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 9px;
+  }
+
+  .step strong {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+  }
+
+  /* CTA */
+
+  .cta {
+    padding: 85px 0;
+
+    background: #ff3d0a;
+
+    color: #fff;
+  }
+
+  .cta-inner {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 60px;
+  }
+
+  .cta .label {
+    margin-bottom: 16px;
+  }
+
+  .cta h2 {
+    font-size: clamp(40px, 4.5vw, 64px);
+  }
+
+  .cta a {
+    flex: 0 0 auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    padding-bottom: 7px;
+
+    border-bottom: 1px solid currentColor;
+
+    color: #fff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+  }
+
+  .cta a span {
+    transition: transform 180ms ease;
+  }
+
+  .cta a:hover span {
+    transform: translate(4px, -4px);
+  }
+
+  /* REVEAL */
+
+  .reveal {
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+      opacity 600ms ease,
+      transform 600ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+  /* TABLET */
+
+  @media (max-width: 900px) {
+    .container {
+      width: min(100% - 48px, 1180px);
+    }
+
+    .hero-grid,
+    .finish-grid {
+      grid-template-columns: 1fr;
+
+      gap: 42px;
+    }
+
+    .product-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product:not(:nth-child(4n + 1)) {
+      padding-left: 0;
+
+      border-left: 0;
+    }
+
+    .product:nth-child(even) {
+      padding-left: 18px;
+
+      border-left: 1px solid #c7c5bf;
+    }
+
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .step:nth-child(2) {
+      border-right: 0;
+    }
+
+    .step:nth-child(3),
+    .step:nth-child(4) {
+      border-top: 1px solid #bbb;
+    }
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 560px) {
+    .container {
+      width: calc(100% - 40px);
+    }
+
+    .hero {
+      padding: 52px 0 65px;
+    }
+
+    .hero-meta {
+      font-size: 9px;
+    }
+
+    .hero-grid {
+      padding-top: 40px;
+    }
+
+    h1 {
+      font-size: clamp(46px, 13vw, 60px);
+    }
+
+    .catalog {
+      padding: 65px 0;
+    }
+
+    .catalog-head {
+      align-items: flex-start;
+    }
+
+    .product-count {
+      display: none;
+    }
+
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .product,
+    .product:nth-child(even) {
+      min-height: 68px;
+
+      padding: 13px 0;
+
+      border-left: 0;
+    }
+
+    .product h3 {
+      margin-top: 13px;
+    }
+
+    .visual {
+      padding: 65px 0;
+    }
+
+    .visual-placeholder {
+      min-height: 300px;
+    }
+
+    .finish {
+      padding: 65px 0;
+    }
+
+    .steps {
+      grid-template-columns: 1fr;
+    }
+
+    .step,
+    .step + .step {
+      min-height: 95px;
+
+      padding: 18px 0;
+
+      border-top: 1px solid #bbb;
+      border-right: 0;
+    }
+
+    .step:first-child {
+      border-top: 0;
+    }
+
+    .cta {
+      padding: 65px 0;
+    }
+
+    .cta-inner {
+      flex-direction: column;
+
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<script>
+  const revealElements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  revealElements.forEach((element) => {
+    observer.observe(element);
+  });
+</script>
