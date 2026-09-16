@@ -4,7 +4,8 @@ import { assetUrl } from "../lib/assetUrl";
 
 <header class="navbar">
   <a class="navbar__logo" href={assetUrl("")} aria-label="Studio 306 — strona główna">
-    <img src={assetUrl("images/logo.png")} alt="Studio 306" />
+    <img src={assetUrl("images/logo.png")} alt="" />
+    <span class="navbar__name">Studio 306</span>
   </a>
 
   <nav class="navbar__nav" aria-label="Główna nawigacja">
@@ -42,6 +43,16 @@ import { assetUrl } from "../lib/assetUrl";
   .navbar__logo {
     display: flex;
     align-items: center;
+    gap: 12px;
+    color: #111;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .navbar__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 
   .navbar__logo img {
@@ -95,7 +106,7 @@ import { assetUrl } from "../lib/assetUrl";
     color: #fff;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
 
     .navbar {
       grid-template-columns: auto auto;
@@ -116,5 +127,23 @@ import { assetUrl } from "../lib/assetUrl";
       font-size: .9rem;
     }
 
+  }
+  @media (max-width: 380px) {
+    .navbar {
+      padding: 0 16px;
+      column-gap: 12px;
+    }
+
+    .navbar__logo {
+      gap: 8px;
+    }
+
+    .navbar__name {
+      font-size: 1.1rem;
+    }
+
+    .navbar__cta {
+      padding: 10px 12px;
+    }
   }
 </style> 
