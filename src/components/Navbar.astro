@@ -1,6 +1,10 @@
+---
+import { assetUrl } from "../lib/assetUrl";
+---
+
 <header class="navbar">
   <a class="navbar__logo" href="/" aria-label="Studio 306 — strona główna">
-    <img src="/public/images/logo.png" alt="Studio 306" />
+    <img src={assetUrl("images/logo.png")} alt="Studio 306" />
   </a>
 
   <nav class="navbar__nav" aria-label="Główna nawigacja">

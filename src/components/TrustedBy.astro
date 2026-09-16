@@ -1,4 +1,5 @@
 ---
+import { assetUrl } from "../lib/assetUrl";
 const logos = [
     { name: "BMW", file: "bmw.svg" },
     { name: "DHL", file: "dhl.svg" },
@@ -18,14 +19,14 @@ const logoLoop = [...logos, ...logos, ...logos, ...logos];
             <div class="logos-track">
                 {logoLoop.map((logo) => (
                     <div class="logo-item">
-                        <img src={`/logos/${logo.file}`} alt={logo.name} />
+                        <img src={assetUrl(`logos/${logo.file}`)} alt={logo.name} />
                     </div>
                 ))}
             </div>
             <div class="logos-track" aria-hidden="true">
                 {logoLoop.map((logo) => (
                     <div class="logo-item">
-                        <img src={`/logos/${logo.file}`} alt={logo.name} />
+                        <img src={assetUrl(`logos/${logo.file}`)} alt={logo.name} />
                     </div>
                 ))}
             </div>
