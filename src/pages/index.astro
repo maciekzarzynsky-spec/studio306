@@ -14,6 +14,7 @@ import Footer from "../components/Footer.astro";
 <Layout>
 
 	<Navbar />
+	<main class="home-content">
 	<Hero />
 	<TrustedBy />
 	<WhyStudio306 />
@@ -21,6 +22,14 @@ import Footer from "../components/Footer.astro";
 	<Projects />
 	<Production />
 	<Contact />
+	</main>
 	<Footer />
 
 </Layout>
+<style>
+@media (max-width: 700px) {
+ .home-content { display: flex; flex-direction: column; }
+ .home-content :global(.hero) { order: -2; }
+ .home-content :global(.offer) { order: -1; }
+}
+</style>

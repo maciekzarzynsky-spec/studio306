@@ -208,7 +208,22 @@ const steps = [
         opacity: 1;
         transform: translateY(0);
     }
-    </style>
+
+@media (max-width: 700px) {
+
+.why-studio { padding: 56px 20px; }
+.section-heading { margin-bottom: 28px; }
+.section-heading h2 { font-size: 2.2rem; line-height: 1.05; }
+.section-heading p { font-size: 1rem; }
+.step { grid-template-columns: 38px minmax(0,1fr); gap: 18px; padding: 22px 0; }
+.step-marker { padding-right: 12px; }
+.step-marker::before { width: 10px; height: 10px; right: -6px; }
+.step-number { font-size: 1.1rem; }
+.step-content h3 { font-size: 1.45rem; }
+.step-content p { font-size: 1rem; }
+
+}
+</style>
 
 <script>
 const observer = new IntersectionObserver(

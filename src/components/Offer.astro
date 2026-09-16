@@ -307,4 +307,19 @@ const categories = [
     color:#777;
 }
   }
+
+@media (max-width: 700px) {
+
+.offer { padding: 36px 20px 44px; background: #fff; }
+.offer-heading { margin-bottom: 12px; }
+.eyebrow { color: #111; font-size: 2.25rem; font-weight: 700; letter-spacing: -.04em; text-transform: none; margin: 0; }
+.offer-heading h2, .offer-heading p { display: none; }
+.offer-grid { gap: 0; }
+.offer-card { box-sizing: border-box; display: grid; grid-template-columns: minmax(0,1fr) 24px; align-items: center; min-height: 80px; padding: 18px 0; border: 0; border-bottom: 1px solid #ddd; border-radius: 0; overflow: visible; }
+.offer-card h3 { grid-area: 1 / 1; font-size: clamp(1.2rem, 5.3vw, 1.55rem); line-height: 1.15; margin: 0; letter-spacing: -.025em; }
+.offer-top { grid-area: 1 / 2; margin: 0; }
+.offer-top span:first-child, .offer-card ul, .offer-more { display: none; }
+.offer-card:hover { transform: none; box-shadow: none; }
+
+}
 </style>

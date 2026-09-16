@@ -18,9 +18,40 @@ import { assetUrl } from "../lib/assetUrl";
   <a class="navbar__cta" href={assetUrl("#kontakt")}>
     Wyceń projekt
   </a>
+  <details class="mobile-menu">
+    <summary aria-label="Menu nawigacji"><span></span><span></span><span></span></summary>
+    <nav aria-label="Nawigacja mobilna">
+      <a href={assetUrl("#oferta")}>Oferta</a>
+      <a href={assetUrl("#realizacje")}>Realizacje</a>
+      <a href={assetUrl("#o-nas")}>O nas</a>
+      <a href={assetUrl("#kontakt")}>Kontakt</a>
+    </nav>
+  </details>
 </header>
+<script>
+ const menu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+ menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.open = false; }));
+ document.addEventListener('keydown', event => {
+   if (event.key === 'Escape' && menu?.open) {
+     menu.open = false;
+     menu.querySelector('summary')?.focus();
+   }
+ });
+</script>
 
 <style>
+.mobile-menu { display: none; }
+@media (max-width: 900px) {
+ .navbar { height: 76px; }
+ .navbar__cta { display: none; }
+ .mobile-menu { display: block; justify-self: end; }
+ .mobile-menu summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; }
+ .mobile-menu summary::-webkit-details-marker { display: none; }
+ .mobile-menu summary span { display: block; width: 24px; height: 2px; background: #111; }
+ .mobile-menu nav { position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 12px 24px 24px; box-shadow: 0 16px 24px #0002; display: grid; }
+ .mobile-menu nav a { color: #111; font-size: 1.1rem; text-decoration: none; padding: 14px 0; border-bottom: 1px solid #eee; }
+}
+
   .navbar {
     position: relative;
     z-index: 100;
@@ -146,4 +177,5 @@ import { assetUrl } from "../lib/assetUrl";
       padding: 10px 12px;
     }
   }
+@media (max-width: 900px) { .navbar { height: 76px; } .navbar__cta { display: none; } }
 </style> 
