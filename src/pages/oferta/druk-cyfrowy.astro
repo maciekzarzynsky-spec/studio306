@@ -1,4 +1,5 @@
 ---
+import { assetUrl as siteUrl } from "../../lib/assetUrl";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
@@ -47,7 +48,7 @@ const products = [
               i wykończenia specjalne.
             </p>
 
-            <a href="/kontakt" class="text-link">
+            <a href={siteUrl("#kontakt")} class="text-link">
               Zapytaj o wycenę
               <span>↗</span>
             </a>
@@ -180,7 +181,7 @@ const products = [
           </h2>
         </div>
 
-        <a href="/kontakt">
+        <a href={siteUrl("#kontakt")}>
           Skontaktuj się
           <span>↗</span>
         </a>

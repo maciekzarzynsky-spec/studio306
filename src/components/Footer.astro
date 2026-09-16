@@ -1,8 +1,12 @@
+---
+import { assetUrl as siteUrl } from "../lib/assetUrl";
+---
+
 <footer class="footer">
   <div class="footer__inner">
 
     <div class="footer__top">
-      <a href="#" class="footer__brand">
+      <a href={siteUrl("")} class="footer__brand">
         STUDIO 306
       </a>
 
@@ -10,10 +14,10 @@
         <div class="footer__column">
           <span class="footer__label">NAWIGACJA</span>
 
-          <a href="#oferta">Oferta</a>
-          <a href="#realizacje">Realizacje</a>
-          <a href="#produkcja">Produkcja</a>
-          <a href="#kontakt">Kontakt</a>
+          <a href={siteUrl("#oferta")}>Oferta</a>
+          <a href={siteUrl("#realizacje")}>Realizacje</a>
+          <a href={siteUrl("#produkcja")}>Produkcja</a>
+          <a href={siteUrl("#kontakt")}>Kontakt</a>
         </div>
 
         <div class="footer__column">

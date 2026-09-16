@@ -1,4 +1,5 @@
 ---
+import { assetUrl as siteUrl } from "../lib/assetUrl";
 const categories = [
   {
     number: "01",
@@ -67,7 +68,7 @@ const categories = [
 
     {categories.map(category => (
 
-      <a href={category.href} class="offer-card">
+      <a href={siteUrl(`${category.href}/`)} class="offer-card">
 
         <div class="offer-top">
           <span>{category.number}</span>

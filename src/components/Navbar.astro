@@ -3,18 +3,18 @@ import { assetUrl } from "../lib/assetUrl";
 ---
 
 <header class="navbar">
-  <a class="navbar__logo" href="/" aria-label="Studio 306 — strona główna">
+  <a class="navbar__logo" href={assetUrl("")} aria-label="Studio 306 — strona główna">
     <img src={assetUrl("images/logo.png")} alt="Studio 306" />
   </a>
 
   <nav class="navbar__nav" aria-label="Główna nawigacja">
-    <a href="/#oferta">Oferta</a>
-    <a href="/#realizacje">Realizacje</a>
-    <a href="/#o-nas">O nas</a>
-    <a href="/#kontakt">Kontakt</a>
+    <a href={assetUrl("#oferta")}>Oferta</a>
+    <a href={assetUrl("#realizacje")}>Realizacje</a>
+    <a href={assetUrl("#o-nas")}>O nas</a>
+    <a href={assetUrl("#kontakt")}>Kontakt</a>
   </nav>
 
-  <a class="navbar__cta" href="#kontakt">
+  <a class="navbar__cta" href={assetUrl("#kontakt")}>
     Wyceń projekt
   </a>
 </header>

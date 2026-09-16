@@ -1,4 +1,5 @@
 ---
+import { assetUrl as siteUrl } from "../../lib/assetUrl";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
@@ -52,7 +53,7 @@ const materials = [
             Drukujemy, produkujemy i pomagamy doprowadzić projekt do gotowego efektu.
           </p>
 
-          <a class="text-link" href="/kontakt">
+          <a class="text-link" href={siteUrl("#kontakt")}>
             Napisz do nas <span>→</span>
           </a>
         </div>
@@ -144,7 +145,7 @@ const materials = [
         <h2>Zrealizujmy go.</h2>
       </div>
 
-      <a href="/kontakt" class="cta-link">
+      <a href={siteUrl("#kontakt")} class="cta-link">
         Napisz do nas <span>↗</span>
       </a>
     </section>
